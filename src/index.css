@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Custom Input Styles */
+.travel-input {
+  @apply w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-dark-primary rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-white dark:bg-dark-primary dark:text-white;
+}
+
+.travel-input:hover {
+  @apply border-gray-400 dark:border-dark-secondary;
+}
+
+.travel-select {
+  @apply w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-dark-primary rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 bg-white dark:bg-dark-primary dark:text-white;
+}
+
+.travel-select:hover {
+  @apply border-gray-400 dark:border-dark-secondary;
+}
+
+.input-icon {
+  @apply absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-gray-500 pointer-events-none transition-colors duration-200;
+}
+
+.input-group:focus-within .input-icon {
+  @apply text-blue-500;
+}
+
+/* Table Styles */
+.table-row {
+  @apply hover:bg-gray-50 dark:hover:bg-dark-primary transition-colors;
+}
+
+.table-cell {
+  @apply px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400;
+}
+
+.table-header {
+  @apply px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider;
+}
+
+/* Card Styles */
+.card {
+  @apply bg-white dark:bg-dark-mid border border-gray-200 dark:border-dark-primary rounded-lg shadow-sm transition-colors;
+}
+
+.card-header {
+  @apply px-6 py-4 border-b border-gray-200 dark:border-dark-primary;
+}
+
+.card-title {
+  @apply text-lg font-medium text-gray-900 dark:text-white;
+}
+
+.card-body {
+  @apply p-6;
+}
+
+/* Alert Animations */
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-modal-appear {
+  animation: modalAppear 0.2s ease-out forwards;
+}
+
+/* Global Search Animations */
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-overlay {
+  animation: overlayShow 150ms ease-out;
+}
+
+.search-content {
+  animation: contentShow 150ms ease-out;
+}
+
+/* Keyboard Shortcut Styles */
+kbd {
+  @apply inline-flex items-center justify-center px-2 py-1 text-xs font-semibold text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-dark-primary border border-gray-200 dark:border-dark-secondary rounded shadow-sm;
+}
+
+/* Page Headers */
+.page-header {
+  @apply text-2xl font-bold text-gray-900 dark:text-white;
+}
+
+.page-subheader {
+  @apply mt-1 text-sm text-gray-500 dark:text-gray-400;
+}
+
+/* Icon Backgrounds */
+.icon-bg {
+  @apply p-2 rounded-full bg-gray-100 dark:bg-dark-primary text-gray-400 dark:text-gray-500;
+}
